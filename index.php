@@ -1,6 +1,17 @@
 <?php
+error_reporting(E_ERROR | E_PARSE);
 session_start();
 include 'config/db.php';
+?>
+<style>
+    .dish-img {
+        width: 100% !important;
+        height: 220px !important;
+        object-fit: cover !important;
+        border-radius: 12px 12px 0 0 !important;
+    }
+</style>
+<?php
 
 $featuredProducts = [];
 $result = $conn->query('SELECT * FROM products LIMIT 8');
